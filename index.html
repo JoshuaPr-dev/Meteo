@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Météo France</title>
+  </head>
+  <body>
+    <header>
+      <form id="city-form">
+        <input type="text" id="city-input" placeholder="Rechercher une ville" autocomplete="off" />
+        <button>Valider</button>
+        <ul id="suggestions"></ul>
+      </form>
+      <p id="loader">Chargement ...</p>
+    </header>
+
+    <main>
+      <div>
+        <h2 id="ville">Paris</h2>
+        <h2 id="temperature">25°C</h2>
+      </div>
+
+      <div>
+        <h3 id="description">Ensoleillé</h3>
+        <p id="humidite">Humidité: 60%</p>
+        <p id="vent">Vent: 18km/h</p>
+        <p id="precipitation">Précipitation: 20 %</p>
+      </div>
+
+      <div>
+        <h3 id="ville2">Paris</h3>
+        <h3 id="temperature2">25°C</h3>
+      </div>
+    </main>
+
+    <footer>
+      <p>Fait par Joshua || 2025 Tous droits réservés</p>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
