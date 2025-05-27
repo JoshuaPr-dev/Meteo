@@ -1,0 +1,234 @@
+:root {
+  --couleur-FondHeader-Ensoleillé: #fdba3b;
+  --couleur-FondHeader-Nuageux: #b0b0b0;
+  --couleur-FondHeader-Pluie: #729dc5;
+  --couleur-FondHeader-Orage: #3c3f58;
+  --couleur-FondHeader-Neige: #9bc1dc;
+
+  --couleur-FondInput-Ensoleillé: #ffe0b2;
+  --couleur-FondInput-Nuageux: #eaeaea;
+  --couleur-FondInput-Pluie: #dce6ec;
+  --couleur-FondInput-Orage: #d7d7e5;
+  --couleur-FondInput-Neige: #f5fbff;
+
+  --couleur-Bouton-Ensoleillé: #6b3d05;
+  --couleur-Bouton-Nuageux: #444444;
+  --couleur-Bouton-Pluie: #2a3f55;
+  --couleur-Bouton-Orage: #1e1f30;
+  --couleur-Bouton-Neige: #3e6b89;
+
+  --couleur-Texte-Ensoleillé: #6b3d05;
+  --couleur-Texte-Nuageux: #444444;
+  --couleur-Texte-Pluie: #2a3f55;
+  --couleur-Texte-Orage: #1e1f30;
+  --couleur-Texte-Neige: #3e6b89;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+body {
+  background-image: url("./assets/img/fondsoleil.svg");
+  background-size: cover;
+  height: 100vh;
+}
+
+h2,
+h3,
+p {
+  color: var(--couleur-Texte-Ensoleillé); /* Correction ici */
+}
+
+/* Header */
+header {
+  background-color: var(--couleur-FondHeader-Ensoleillé);
+  padding: 1.4rem 0.95rem;
+}
+
+header form input,
+button {
+  border: none;
+  border-radius: 7px;
+  text-align: center;
+}
+
+header form input {
+  width: 70%;
+  padding: 0.8rem 0;
+  background-color: var(--couleur-FondInput-Ensoleillé);
+}
+header form input::placeholder {
+  font-size: 1rem;
+  color: black;
+}
+
+input.ensoleille {
+  background-color: var(--couleur-FondInput-Ensoleillé);
+}
+input.nuageux {
+  background-color: var(--couleur-FondInput-Nuageux);
+}
+input.pluie {
+  background-color: var(--couleur-FondInput-Pluie);
+}
+input.orage {
+  background-color: var(--couleur-FondInput-Orage);
+  color: white;
+}
+input.neige {
+  background-color: var(--couleur-FondInput-Neige);
+}
+
+header form button {
+  margin-left: 0.75rem;
+  width: 25%;
+  padding: 0.67rem 0;
+  background-color: var(--couleur-FondButton-et-CouleurTexte);
+  color: white;
+  font-size: 1rem;
+}
+
+header form button,
+header form button.ensoleille,
+header form button.nuageux,
+header form button.pluie,
+header form button.orage,
+header form button.neige {
+  color: #fff !important;
+}
+
+header form button.ensoleille {
+  background-color: var(--couleur-Bouton-Ensoleillé);
+  color: #6b3d05;
+}
+header form button.nuageux {
+  background-color: var(--couleur-Bouton-Nuageux);
+  color: #6b3d05;
+}
+header form button.pluie {
+  background-color: var(--couleur-Bouton-Pluie);
+  color: white;
+}
+header form button.orage {
+  background-color: var(--couleur-Bouton-Orage);
+  color: white;
+}
+header form button.neige {
+  background-color: var(--couleur-Bouton-Neige);
+  color: #6b3d05;
+}
+
+header p {
+  color: white;
+  margin-left: 22%;
+  margin-top: 0.3rem;
+}
+
+/* Main */
+.div1 {
+  display: flex;
+  margin: 10% 7% 7% 7%;
+  align-items: center;
+  gap: 11%;
+}
+
+.div1 img {
+  width: 45%;
+  height: auto;
+}
+
+.div1 h2 {
+  margin-right: 10%;
+  font-size: 2rem;
+}
+
+.div1_1 {
+  display: flex;
+  flex-direction: column;
+}
+.div2 {
+  margin: 9% 0 0 12%;
+}
+
+.div2 h3 {
+  font-size: 2rem;
+  padding-bottom: 1rem;
+}
+
+.div2 p {
+  font-size: 1.15rem;
+}
+
+.div2 .p1 {
+  padding: 0.15rem 0;
+}
+
+.div3 {
+  padding-top: 3rem;
+  margin-left: 12%;
+}
+
+.div3 h3 {
+  font-size: 2rem;
+}
+
+footer {
+  flex-shrink: 0;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  background: transparent; 
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 0; 
+}
+
+
+footer p {
+  color: #fff !important;
+  font-size: medium;
+}
+
+.texte-ensoleille h2,
+.texte-ensoleille h3,
+.texte-ensoleille p {
+  color: var(--couleur-Texte-Ensoleillé);
+}
+.texte-nuageux h2,
+.texte-nuageux h3,
+.texte-nuageux p {
+  color: var(--couleur-Texte-Nuageux);
+}
+.texte-pluie h2,
+.texte-pluie h3,
+.texte-pluie p {
+  color: var(--couleur-Texte-Pluie);
+}
+.texte-orage h2,
+.texte-orage h3,
+.texte-orage p {
+  color: var(--couleur-Texte-Orage);
+}
+.texte-neige h2,
+.texte-neige h3,
+.texte-neige p {
+  color: var(--couleur-Texte-Neige);
+}

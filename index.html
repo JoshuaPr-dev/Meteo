@@ -4,31 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Météo France</title>
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <header>
       <form id="city-form">
         <input type="text" id="city-input" placeholder="Rechercher une ville" autocomplete="off" />
-        <button>Valider</button>
+        <button type="submit">Valider</button>
         <ul id="suggestions"></ul>
       </form>
       <p id="loader">Chargement ...</p>
     </header>
 
     <main>
-      <div>
-        <h2 id="ville">Paris</h2>
-        <h2 id="temperature">25°C</h2>
+      <div class="div1">
+        <img id="weather-img" src="./assets/img/soleil.svg" alt="Image de soleil" />
+        <div class="div1_1">
+          <h2 id="ville">Paris</h2>
+          <h2 id="temperature">25°C</h2>
+        </div>
       </div>
 
-      <div>
+      <div class="div2">
         <h3 id="description">Ensoleillé</h3>
         <p id="humidite">Humidité: 60%</p>
-        <p id="vent">Vent: 18km/h</p>
+        <p class="p1" id="vent">Vent: 18km/h</p>
         <p id="precipitation">Précipitation: 20 %</p>
       </div>
 
-      <div>
+      <div class="div3">
         <h3 id="ville2">Paris</h3>
         <h3 id="temperature2">25°C</h3>
       </div>
