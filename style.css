@@ -1,3 +1,4 @@
+/* Définition des variables CSS pour les couleurs selon la météo */
 :root {
   --couleur-FondHeader-Ensoleillé: #fdba3b;
   --couleur-FondHeader-Nuageux: #b0b0b0;
@@ -24,44 +25,51 @@
   --couleur-Texte-Neige: #3e6b89;
 }
 
+/* Réinitialisation des marges et paddings par défaut */
 * {
   padding: 0;
   margin: 0;
 }
 
+/* Hauteur totale pour html et body */
 html,
 body {
   height: 100%;
 }
 
+/* Mise en page principale du body en flex pour occuper tout l'écran */
 body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
+/* Le main prend toute la place disponible */
 main {
   flex: 1 0 auto;
 }
 
+/* Image de fond par défaut (ensoleillé) */
 body {
   background-image: url("./assets/img/fondsoleil.svg");
   background-size: cover;
-  height: 100vh;
+  /* background-repeat: no-repeat; */
 }
 
+/* Couleur du texte par défaut */
 h2,
 h3,
 p {
-  color: var(--couleur-Texte-Ensoleillé); /* Correction ici */
+  color: var(--couleur-Texte-Ensoleillé);
 }
 
-/* Header */
+/* ------------------- Header ------------------- */
 header {
   background-color: var(--couleur-FondHeader-Ensoleillé);
   padding: 1.4rem 0.95rem;
 }
 
+/* Style des inputs et boutons du formulaire */
 header form input,
 button {
   border: none;
@@ -69,6 +77,7 @@ button {
   text-align: center;
 }
 
+/* Style spécifique à l'input */
 header form input {
   width: 70%;
   padding: 0.8rem 0;
@@ -79,6 +88,7 @@ header form input::placeholder {
   color: black;
 }
 
+/* Couleurs de fond de l'input selon la météo */
 input.ensoleille {
   background-color: var(--couleur-FondInput-Ensoleillé);
 }
@@ -96,6 +106,7 @@ input.neige {
   background-color: var(--couleur-FondInput-Neige);
 }
 
+/* Style du bouton du formulaire */
 header form button {
   margin-left: 0.75rem;
   width: 25%;
@@ -105,6 +116,7 @@ header form button {
   font-size: 1rem;
 }
 
+/* Forcer la couleur du texte des boutons */
 header form button,
 header form button.ensoleille,
 header form button.nuageux,
@@ -114,6 +126,7 @@ header form button.neige {
   color: #fff !important;
 }
 
+/* Couleurs de fond et texte du bouton selon la météo */
 header form button.ensoleille {
   background-color: var(--couleur-Bouton-Ensoleillé);
   color: #6b3d05;
@@ -135,78 +148,86 @@ header form button.neige {
   color: #6b3d05;
 }
 
+/* Style du texte sous le header */
 header p {
   color: white;
   margin-left: 22%;
   margin-top: 0.3rem;
 }
 
-/* Main */
+/* ------------------- Main ------------------- */
+
+/* Première section principale en flex */
 .div1 {
   display: flex;
-  margin: 10% 7% 7% 7%;
+  margin: 10% 7% 7% 4%;
   align-items: center;
   gap: 11%;
 }
 
+/* Image météo dans la section principale */
 .div1 img {
   width: 45%;
   height: auto;
 }
 
+/* Titre météo principal */
 .div1 h2 {
   margin-right: 10%;
   font-size: 2rem;
 }
 
+/* Sous-section colonne pour infos météo */
 .div1_1 {
   display: flex;
   flex-direction: column;
 }
+
+/* Deuxième section principale */
 .div2 {
-  margin: 9% 0 0 12%;
+  margin: 15% 0 0 8%;
 }
 
+/* Titre de la deuxième section */
 .div2 h3 {
   font-size: 2rem;
   padding-bottom: 1rem;
 }
 
+/* Paragraphe de la deuxième section */
 .div2 p {
   font-size: 1.15rem;
 }
 
+/* Classe pour espacer les paragraphes */
 .div2 .p1 {
   padding: 0.15rem 0;
 }
 
+/* Troisième section (souvent cachée sur desktop) */
 .div3 {
-  padding-top: 3rem;
-  margin-left: 12%;
+  padding-top: 4rem;
+  margin-left: 8%;
 }
 
 .div3 h3 {
   font-size: 2rem;
 }
 
+/* ------------------- Footer ------------------- */
 footer {
-  flex-shrink: 0;
   width: 100%;
-  position: relative;
-  bottom: 0;
-  left: 0;
-  background: transparent; 
   text-align: center;
   padding: 1rem 0;
-  margin-top: 0; 
+  margin-top: 0;
 }
-
 
 footer p {
   color: #fff !important;
   font-size: medium;
 }
 
+/* ------------------- Couleurs du texte selon la météo ------------------- */
 .texte-ensoleille h2,
 .texte-ensoleille h3,
 .texte-ensoleille p {
@@ -231,4 +252,80 @@ footer p {
 .texte-neige h3,
 .texte-neige p {
   color: var(--couleur-Texte-Neige);
+}
+
+/* ------------------- Responsive (media queries) ------------------- */
+
+/* Ajustement de l'espacement sur écrans moyens */
+@media (min-width: 424px) {
+  .div1 {
+    gap: 20%;
+  }
+}
+
+/* Ajustements pour tablettes */
+@media (min-width: 599px) {
+  header form button {
+    width: 27%;
+  }
+  .div1 h2 {
+    font-size: 2.5rem;
+  }
+  .div2 h3 {
+    font-size: 2.25rem;
+  }
+  .div2 p {
+    font-size: 1.25rem;
+  }
+  .div3 {
+    display: none;
+  }
+}
+@media (min-width: 599px) {
+  .div2 {
+    margin: 9% 0 0 12%;
+  }
+}
+
+/* Ajustements pour écrans larges */
+@media (min-width: 767px) {
+  .div1 img {
+    height: auto;
+    width: 14rem;
+  }
+  .div1 {
+    margin: 6% 7% 0% 10%;
+  }
+  .div2 {
+    margin: 0 0 0 55%;
+  }
+}
+
+/* Ajustements pour très grands écrans */
+@media (min-width: 1023px) {
+  body {
+    background-position: center;
+  }
+
+  header form button {
+    width: 28%;
+  }
+  .div1 {
+    margin: 3% 7% 0% 15%;
+  }
+  .div2 {
+    margin: -35px 0 0 65%;
+  }
+}
+@media (min-width: 1439px) {
+  .div1 {
+    gap: 37%;
+  }
+  .div1 img {
+    height: auto;
+    width: 20rem;
+  }
+  .div2 {
+    margin: -7px 0 0 65%;
+  }
 }
