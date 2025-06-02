@@ -23,6 +23,12 @@
   --couleur-Texte-Pluie: #2a3f55;
   --couleur-Texte-Orage: #1e1f30;
   --couleur-Texte-Neige: #3e6b89;
+
+  --box-shadow-ensoleille: 0px 1px 14px 0px #fdba3b;
+  --box-shadow-nuageux: 0px 1px 14px 0px #b0b0b0;
+  --box-shadow-pluie: 0px 1px 14px 0px #729dc5;
+  --box-shadow-orage: 0px 1px 14px 0px #3c3f58;
+  --box-shadow-neige: 0px 1px 14px 0px #9bc1dc;
 }
 
 /* Réinitialisation des marges et paddings par défaut */
@@ -67,6 +73,7 @@ p {
 header {
   background-color: var(--couleur-FondHeader-Ensoleillé);
   padding: 1.4rem 0.95rem;
+  box-shadow: var(--box-shadow-ensoleille);
 }
 
 /* Style des inputs et boutons du formulaire */
@@ -88,21 +95,25 @@ header form input::placeholder {
   color: black;
 }
 
+header form ul {
+  padding-left: 7%;
+}
+
 /* Couleurs de fond de l'input selon la météo */
-input.ensoleille {
+.ensoleille {
   background-color: var(--couleur-FondInput-Ensoleillé);
 }
-input.nuageux {
+.nuageux {
   background-color: var(--couleur-FondInput-Nuageux);
 }
-input.pluie {
+.pluie {
   background-color: var(--couleur-FondInput-Pluie);
 }
-input.orage {
+.orage {
   background-color: var(--couleur-FondInput-Orage);
   color: white;
 }
-input.neige {
+.neige {
   background-color: var(--couleur-FondInput-Neige);
 }
 
@@ -117,7 +128,6 @@ header form button {
 }
 
 /* Forcer la couleur du texte des boutons */
-header form button,
 header form button.ensoleille,
 header form button.nuageux,
 header form button.pluie,
@@ -146,6 +156,28 @@ header form button.orage {
 header form button.neige {
   background-color: var(--couleur-Bouton-Neige);
   color: #6b3d05;
+}
+
+/* Effet de survol sur les boutons météo */
+header form button.ensoleille:hover {
+  background-color: #a86b1a;
+  color: #fff;
+}
+header form button.nuageux:hover {
+  background-color: #888888;
+  color: #fff;
+}
+header form button.pluie:hover {
+  background-color: #4d6e8c;
+  color: #fff;
+}
+header form button.orage:hover {
+  background-color: #23243a;
+  color: #fff;
+}
+header form button.neige:hover {
+  background-color: #5fa3d6;
+  color: #fff;
 }
 
 /* Style du texte sous le header */
@@ -306,10 +338,23 @@ footer p {
   body {
     background-position: center;
   }
-
-  header form button {
-    width: 28%;
+  .flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
+
+  header form input {
+    width: 40%;
+  }
+  header form button {
+    width: 15%;
+  }
+
+  header form ul {
+    padding-left: 24%;
+  }
+
   .div1 {
     margin: 3% 7% 0% 15%;
   }

@@ -260,6 +260,27 @@ async function afficherMeteo(ville) {
 
     // Changement de la couleur du header selon la météo
     document.querySelector("header").style.backgroundColor = getHeaderColor(desc);
+
+    // Changement du box-shadow selon la météo
+    let header = document.querySelector("header");
+    if (desc.toLowerCase().includes("soleil") || desc.toLowerCase().includes("clair") || desc.toLowerCase().includes("dégagé")) {
+      header.style.boxShadow = "var(--box-shadow-ensoleille)";
+    } else if (
+      desc.toLowerCase().includes("nuage") ||
+      desc.toLowerCase().includes("couvert") ||
+      desc.toLowerCase().includes("brouillard") ||
+      desc.toLowerCase().includes("brume")
+    ) {
+      header.style.boxShadow = "var(--box-shadow-nuageux)";
+    } else if (desc.toLowerCase().includes("pluie") || desc.toLowerCase().includes("bruine") || desc.toLowerCase().includes("averse")) {
+      header.style.boxShadow = "var(--box-shadow-pluie)";
+    } else if (desc.toLowerCase().includes("orage")) {
+      header.style.boxShadow = "var(--box-shadow-orage)";
+    } else if (desc.toLowerCase().includes("neige") || desc.toLowerCase().includes("grésil") || desc.toLowerCase().includes("verglas")) {
+      header.style.boxShadow = "var(--box-shadow-neige)";
+    } else {
+      header.style.boxShadow = "var(--box-shadow-ensoleille)";
+    }
   } catch (e) {
     // Gestion des erreurs (ville non trouvée, etc.)
     villeElt.textContent = "Ville non trouvée";
